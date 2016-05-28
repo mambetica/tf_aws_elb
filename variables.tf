@@ -1,5 +1,9 @@
 # Base ELB
 variable "elb_name" { }
+variable "owner" {
+  description = "Owner tag added to resource to identify who build the resource"
+  default = "Terraform"
+}
 variable "subnets" { }
 variable "internal" {
   description = "Is the ELB internal (true) or external (false)"
