@@ -30,7 +30,7 @@ resource "aws_elb" "elb" {
     healthy_threshold = "${var.health_check_healthy_threshold}"
     unhealthy_threshold = "${var.health_check_unhealthy_threshold}"
     timeout = "${var.health_check_timeout}"
-    target = ${var.health_check_target}"
+    target = "${var.health_check_target}"
     interval = "${var.health_check_interval}"
   }
 
