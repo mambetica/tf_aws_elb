@@ -52,9 +52,9 @@ variable "listener_instance_protocol" {
   description = "The protocol to use to the instance. Valid values are HTTP, HTTPS, TCP, or SSL"
   default = "https"
 }
-variable "listener_ssl_certificate_id" {
+/*variable "listener_ssl_certificate_id" {
   description = "The ARN of an SSL certificate you have uploaded to AWS IAM. Only valid when lb_protocol is either HTTPS or SSLs"
-}
+} */
 # Health Check
 variable "health_check_healthy_threshold" {
   description = "The number of checks before the instance is declared healthy"
