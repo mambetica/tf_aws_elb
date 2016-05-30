@@ -11,9 +11,9 @@ variable "internal" {
   description = "Is the ELB internal (true) or external (false)"
   default = false
 }
-variable "security_group" {
+/* variable "security_group" {
   description = "A security group to assign to the ELB"
-}
+} */
 variable "cross_zone_load_balancing" {
   description = "Enable cross-zone load balancing"
   default = true
