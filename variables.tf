@@ -75,3 +75,7 @@ variable "health_check_interval" {
   description = "The interval between checks"
   default = 30
 }
+# Route 53
+variable "route53_zone_name" {
+  description = "External domain name used"
+}
