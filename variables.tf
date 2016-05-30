@@ -1,5 +1,7 @@
 # Base ELB
-variable "elb_name" { }
+variable "name" {
+  description = "The name of the ELB"
+}
 variable "owner" {
   description = "Owner tag added to resource to identify who build the resource"
   default = "Terraform"

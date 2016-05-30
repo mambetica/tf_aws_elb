@@ -3,7 +3,7 @@
 # - That all traffic is HTTPS
 
 resource "aws_elb" "elb" {
-  name = "${var.elb_name}"
+  name = "${var.name}"
   subnets = ["${split(",", var.subnets)}"]
   internal = "${var.internal}"
   security_groups = ["${var.security_group}"]
