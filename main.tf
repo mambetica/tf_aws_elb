@@ -35,7 +35,7 @@ resource "aws_elb" "elb" {
   }
 
   tags {
-    Name = "${var.elb_name}"
+    Name = "${var.name}"
     Owner = "${var.owner}"
   }
 }
