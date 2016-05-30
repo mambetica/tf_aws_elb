@@ -5,18 +5,18 @@
 resource "aws_elb" "elb" {
   name = "${var.elb_name}"
   subnets = ["${split(",", var.subnets)}"]
-  internal = "${var.internal}"
-  security_groups = ["${var.security_groups}"]
-  cross_zone_load_balancing = "${var.cross_zone_load_balancing}"
-  idle_timeout = "${var.subnets}"
-  connection_draining = "${var.connection_draining}"
-  connection_draining_timeout = "${var.connection_draining_timeout}"
+//  internal = "${var.internal}"
+//  security_groups = ["${var.security_groups}"]
+//  cross_zone_load_balancing = "${var.cross_zone_load_balancing}"
+//  idle_timeout = "${var.subnets}"
+//  connection_draining = "${var.connection_draining}"
+//  connection_draining_timeout = "${var.connection_draining_timeout}"
   
-  access_logs {
+/*  access_logs {
     bucket = "${var.access_logs_S3_bucket}"
     bucket_prefix = "${var.access_logs_S3_bucket_prefix}"
     interval = "${var.access_logs_interval}"
-  }
+  }  */
 
   listener {
     instance_port = "${var.listener_instance_port}"
@@ -26,13 +26,13 @@ resource "aws_elb" "elb" {
     ssl_certificate_id = "${var.listener_ssl_certificate_id}"
   }
 
-  health_check {
+/*  health_check {
     healthy_threshold = "${var.health_check_healthy_threshold}"
     unhealthy_threshold = "${var.health_check_unhealthy_threshold}"
     timeout = "${var.health_check_timeout}"
     target = "${var.health_check_target}"
     interval = "${var.health_check_interval}"
-  }
+  }  */
 
   tags {
     Name = "${var.elb_name}"
