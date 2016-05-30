@@ -40,6 +40,10 @@ resource "aws_elb" "elb" {
   }
 }
 
+resource "aws_route53_zone" "primary" {
+   name = "mambetica.io"
+}
+
 resource "aws_route53_record" "www" {
   zone_id = "${aws_route53_zone.primary.zone_id}"
   name = "mambetica.io"
