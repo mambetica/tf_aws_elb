@@ -21,9 +21,9 @@ resource "aws_elb" "elb" {
   listener {
     instance_port = "${var.listener_instance_port}"
     instance_protocol = "${var.listener_instance_protocol}"
-    lb_port = 443
-    lb_protocol = "https"
-    ssl_certificate_id = "${var.listener_ssl_certificate_id}"
+    lb_port = 80
+    lb_protocol = "http"
+#    ssl_certificate_id = "${var.listener_ssl_certificate_id}"
   }
 
   health_check {
@@ -37,5 +37,17 @@ resource "aws_elb" "elb" {
   tags {
     Name = "${var.name}"
     Owner = "${var.owner}"
+  }
+}
+
+resource "aws_route53_record" "www" {
+  zone_id = "${aws_route53_zone.primary.zone_id}"
+  name = "mambetica.io"
+  type = "A"
+
+  alias {
+    name = "${aws_elb.elb.dns_name}"
+    zone_id = "${aws_elb.elb.zone_id}"
+    evaluate_target_health = true
   }
 }
