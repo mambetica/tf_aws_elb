@@ -4,11 +4,11 @@
 
 resource "aws_elb" "elb" {
   name = "${var.name}"
-#  subnets = ["${split(",", var.subnets)}"]
+  subnets = ["${split(",", var.subnets)}"]
   internal = "${var.internal}"
-#  security_groups = ["${var.security_group}"]
+  security_groups = ["${var.security_group}"]
   cross_zone_load_balancing = "${var.cross_zone_load_balancing}"
-  idle_timeout = "${var.subnets}"
+  idle_timeout = "${var.idle_timeout}"
   connection_draining = "${var.connection_draining}"
   connection_draining_timeout = "${var.connection_draining_timeout}"
   
