@@ -5,12 +5,12 @@
 resource "aws_elb" "elb" {
   name = "${var.elb_name}"
   subnets = ["${split(",", var.subnets)}"]
-//  internal = "${var.internal}"
+  internal = "${var.internal}"
 //  security_groups = ["${var.security_groups}"]
-//  cross_zone_load_balancing = "${var.cross_zone_load_balancing}"
-//  idle_timeout = "${var.subnets}"
-//  connection_draining = "${var.connection_draining}"
-//  connection_draining_timeout = "${var.connection_draining_timeout}"
+  cross_zone_load_balancing = "${var.cross_zone_load_balancing}"
+  idle_timeout = "${var.subnets}"
+  connection_draining = "${var.connection_draining}"
+  connection_draining_timeout = "${var.connection_draining_timeout}"
   
   access_logs {
     bucket = "${var.access_logs_S3_bucket}"
