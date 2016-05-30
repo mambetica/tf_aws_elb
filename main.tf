@@ -4,7 +4,7 @@
 
 resource "aws_elb" "elb" {
   name = "${var.name}"
-  subnets = ["${split(",", var.subnets)}"]
+#  subnets = ["${split(",", var.subnets)}"]
   internal = "${var.internal}"
 #  security_groups = ["${var.security_group}"]
   cross_zone_load_balancing = "${var.cross_zone_load_balancing}"

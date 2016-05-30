@@ -6,7 +6,7 @@ variable "owner" {
   description = "Owner tag added to resource to identify who build the resource"
   default = "Terraform"
 }
-variable "subnets" { }
+# variable "subnets" { }
 variable "internal" {
   description = "Is the ELB internal (true) or external (false)"
   default = false
