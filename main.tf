@@ -21,8 +21,8 @@ resource "aws_elb" "elb" {
   listener {
     instance_port = "${var.listener_instance_port}"
     instance_protocol = "${var.listener_instance_protocol}"
-    lb_port = 80
-    lb_protocol = "http"
+    lb_port = "${var.listener_lb_port}"
+    lb_protocol = "${var.listener_lb_protocol}"
 #    ssl_certificate_id = "${var.listener_ssl_certificate_id}"
   }
 

@@ -52,6 +52,14 @@ variable "listener_instance_protocol" {
   description = "The protocol to use to the instance. Valid values are HTTP, HTTPS, TCP, or SSL"
   default = "https"
 }
+variable "lb_port" {
+  description = "The port to listen on for the load balancer"
+  default = 443
+}
+variable "lb_protocol" {
+  description = "The protocol to listen on. Valid values are HTTP, HTTPS, TCP, or SSL"
+  default = "https"
+}
 /*variable "listener_ssl_certificate_id" {
   description = "The ARN of an SSL certificate you have uploaded to AWS IAM. Only valid when lb_protocol is either HTTPS or SSLs"
 } */
